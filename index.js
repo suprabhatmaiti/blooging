@@ -1,10 +1,7 @@
 require("./config");
 const express = require("express");
-
+const router = require("./router");
 const app = express();
 
-app.get("/check", (req, res) => {
-  res.send({ hello: "world" });
-});
-
+router(app);
 app.listen(4000, () => console.log("Backend running at 4000"));
