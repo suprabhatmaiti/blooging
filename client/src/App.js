@@ -1,6 +1,6 @@
 import React from "react";
-function App() {
-  return <div className="App">abc</div>;
-}
+import Welcome from "./pages/Welcome.jsx";
 
-export default App;
+export default function App() {
+  return <Welcome />;
+}
