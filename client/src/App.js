@@ -1,6 +1,6 @@
 import React from "react";
-import Welcome from "./pages/Welcome.jsx";
+import Router from "./Router";
 
 export default function App() {
-  return <Welcome />;
+  return <Router />;
 }

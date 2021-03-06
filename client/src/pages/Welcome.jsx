@@ -64,6 +64,7 @@ export default function Welcome() {
             News
           </Typography>
           <Button color="inherit">Login</Button>
+          <Button color="inherit">Sign Up</Button>
         </Toolbar>
       </AppBar>
 
