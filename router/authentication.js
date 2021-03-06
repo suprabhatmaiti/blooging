@@ -20,12 +20,22 @@ route.swAuthenticationRouter = {
       },
       responses: {
         200: {
-          description: "Returns dummy json",
+          description: "Successfully User Created",
+        },
+        400: {
+          description: "Validation error",
+        },
+        409: {
+          description: "User already exists",
         },
       },
     },
   },
 };
-route.post("/signup", validate(authentication.signup), controller.signup);
+route.post(
+  "/signup",
+  validate({ body: authentication.signup }),
+  controller.signup
+);
 
 module.exports = route;

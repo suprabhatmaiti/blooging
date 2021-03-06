@@ -5,7 +5,7 @@ module.exports = {
     data,
     status: "ERROR",
   }),
-  success: (data, code = 200, message = "") => ({
+  success: (data, message = "", code = 200) => ({
     data,
     status: "OK",
     code,

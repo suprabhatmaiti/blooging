@@ -5,7 +5,10 @@ module.exports = {
    * For sign up
    */
   signup: Joi.object({
-    email: Joi.string().email().required(),
+    email: Joi.string().email({
+      minDomainSegments: 2,
+      tlds: { allow: ["com", "net"] },
+    }),
     password: Joi.string().required(),
     first_name: Joi.string().required(),
     last_name: Joi.string().required(),

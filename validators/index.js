@@ -10,7 +10,7 @@ module.exports = {
     property
   ) => {
     return (req, res, next) => {
-      const isValid = false;
+      let valid = false;
       let result = null;
 
       if (schema.body) {
@@ -21,7 +21,6 @@ module.exports = {
         next();
       } else {
         const { details } = result.error;
-        logger.error({ message });
         res.status(400).send(format.error("Validation error", 400, details));
       }
     };

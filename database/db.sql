@@ -1,6 +1,6 @@
 CREATE TABLE `blogging`.`user` (
   `email` VARCHAR(255) NOT NULL,
-  `password` VARCHAR(32) NOT NULL,
+  `password` VARCHAR(256) NOT NULL,
   `create_time` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
   `first_name` VARCHAR(45) NULL,
   `last_name` VARCHAR(45) NULL,
