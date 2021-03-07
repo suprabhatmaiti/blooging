@@ -33,6 +33,10 @@ const useStyle = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+  formControl: {
+    margin: theme.spacing(1),
+    width: "100%",
+  },
 }));
 
 function Copyright() {
@@ -50,10 +54,10 @@ function Copyright() {
 
 export default function Signup() {
   const classes = useStyle();
-  const [age, setAge] = React.useState("");
+  const [gender, setGender] = React.useState("");
 
   const handleChange = (event) => {
-    setAge(event.target.value);
+    setGender(event.target.value);
   };
   return (
     <Container component="main" maxWidth="xs">
@@ -101,21 +105,22 @@ export default function Signup() {
                 autoComplete="email"
               />
             </Grid>
-            <FormControl>
-              <InputLabel id="demo-simple-select-label" required>
-                Age
+            <FormControl variant="outlined" className={classes.formControl}>
+              <InputLabel id="gender" required>
+                Gender
               </InputLabel>
               <Select
-                labelId="select-label"
-                id="-select"
-                value={age}
+                labelId="gender"
+                value={gender}
                 onChange={handleChange}
+                label="Gender"
               >
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
+                <MenuItem value={"M"}>Male</MenuItem>
+                <MenuItem value={"F"}>Female</MenuItem>
+                <MenuItem value={"O"}>Others</MenuItem>
               </Select>
             </FormControl>
+
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
@@ -138,9 +143,9 @@ export default function Signup() {
           >
             Sign Up
           </Button>
-          <Grid container justify="flex-end">
+          <Grid container justify="center">
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="/login" variant="body2">
                 Already have an account? Sign in
               </Link>
             </Grid>
